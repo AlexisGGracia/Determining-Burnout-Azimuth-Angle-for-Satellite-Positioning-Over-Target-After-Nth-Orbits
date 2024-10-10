@@ -25,7 +25,6 @@ f = 3.353*10^-3;               %Earth's Oblaqueness Constant
 height = 0;
 
 % defining initial and final longitude/lattitude
-
 sat_longitude1 = -120.6*pi/180;          %longitude at burnout
 sat_lattitude1 = 30.3*pi/180;            %lattitude at burnout
 
@@ -33,10 +32,10 @@ sat_longitude_final = -97.7*pi/180;      %final longitude over desire position
 sat_lattitude_final = 30.3*pi/180;       %final lattitude over desire position
 
 % intermediate calculations
-P = 2*pi*sqrt(a^3/mu_earth);
+P = 2*pi*sqrt(a^3/mu_earth);           % Determining the period of the orbit 
 y = sqrt(1-e)*sin(theta1/2);
 x = sqrt(1+e)*cos(theta1/2);
-E0 = 2*atan2(y,x);
+E0 = 2*atan2(y,x);                     % Initial Eccentric Anomally
 t1 = (P/(2*pi))*(E0 - e*sin(E0));      %initial time at burnout true anomally
 
 
@@ -44,7 +43,7 @@ t1 = (P/(2*pi))*(E0 - e*sin(E0));      %initial time at burnout true anomally
 lamnda2e = sat_longitude_final + n*w_earth*P;
 deltaT = (P/(2*pi)) * (lamnda2e - sat_longitude1);   %change in time for 1st iteration only
 
-
+%Iterate to determine the burnout azimuth
 while i <=  iterations
  
     delta_longitude = ( lamnda2e - sat_longitude1 + w_earth*deltaT );
@@ -64,7 +63,7 @@ while i <=  iterations
     delta_theta = theta2 - theta1;      %computes the change in anomally based on final minus initial true anomally
     argument2 = sin(delta_longitude)*cos(sat_lattitude_final) / sin(delta_theta);
     azimuth = asin(argument2);
-    inclination = acos(sin(azimuth)*cos(sat_lattitude1));
+    inclination = acos(sin(azimuth)*cos(sat_lattitude1)); 
    
     %accounting for Earth's oblaqueness
      if i == 1
@@ -116,22 +115,23 @@ end
  fprintf ('Azimuth at burnout = %1.13f degrees\n', azimuth*180/pi)
  fprintf ('deltaT at burnout = %1.6f (s) \n',  deltaT)
  disp(' ')
-%computing the orbital elements at burnout
 
+%computing the orbital elements at burnout
 longitudeN = atan2(sin(sat_lattitude1)*sin(azimuth),cos(azimuth) );
-longitude_RAAN = sat_longitude1 - longitudeN;
-RAAN = GSMT + longitude_RAAN;
-w =  asin(sin(sat_lattitude1)/sin(inclination) ) - theta1 ;
+longitude_RAAN = sat_longitude1 - longitudeN; 
+RAAN = GSMT + longitude_RAAN;                                           %Computes the Right Ascension of the Ascending Node
+w =  asin(sin(sat_lattitude1)/sin(inclination) ) - theta1 ;             %Computes the Argument of Perigee
 orbital_elements = [a e theta1 (inclination) (w) (RAAN)];
+
 disp('Orbital Elements at burnout: ')
 fprintf ('a = %1.2f (km) \n',orbital_elements(1))
 fprintf ('e = %1.7f  \n',orbital_elements(2))
 fprintf ('True Anomally = %1.4f degrees \n',orbital_elements(3)*180/pi)
- fprintf ('Inclination = %1.13f degrees\n',orbital_elements(4)*180/pi)
+fprintf ('Inclination = %1.13f degrees\n',orbital_elements(4)*180/pi)
 fprintf ('Argument of Periapsis = %1.13f degrees \n',orbital_elements(5)*180/pi)
 fprintf ('RAAN = %1.13f degrees \n',orbital_elements(6)*180/pi)
 
-% computing the position and velocity using orbital elements at burnout
+% computing the position and velocity using orbital elements at burnout (This function is listed on a separate file and must be downloaded to be use along with this code)
 y = CartesianCoordinateConversion (orbital_elements(1), orbital_elements(2), orbital_elements(3),orbital_elements(4),orbital_elements(5),orbital_elements(6), mu_earth);
 sat_position_burnout = y(1:3);     %satellites position at burnout in  (km)
 sat_velocity_burnout = y(4:6);     %satellites velocity at burnout in  (km/s)
@@ -155,9 +155,11 @@ for i = 1:length(Y)
     sat_position_overtime(:,i) = Y(i,1:3);
  
 end
-% generating the groundtracks
+
+% generating the groundtracks (Coastline map and a function to name Groundtrack is listed on a separate file and must be downloaded to be use along with this code)
 load('earth_coastline.mat')
 [sat_lat, sat_long] = GroundTracks(tspan, sat_position_overtime, GSMT, w_earth, f);
+
 
 figure
 grid on
@@ -192,7 +194,6 @@ for i = 1:size(sat_position_overtime,2)
     %GMST2(y) = GSMT + w_earth*tspan(y);
 
 end
-
 
 figure
 hold on
