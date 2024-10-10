@@ -1,7 +1,7 @@
-%% Final Project: Determining the burnout azimuth
-%% Launching Direction: Westward Launch 
-%% Final Positioning: Austin Texas
-%% Initial Position: Coast of California
+% Final Project: Determining the burnout azimuth
+% Launching Direction: Westward Launch 
+% Final Positioning: Austin Texas
+% Initial Position: Coast of California
 
 
 clear
