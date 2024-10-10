@@ -1,4 +1,4 @@
-
+% Given the Satellites position, GMST, latitude, longitude, and height, it computes the range, azimuth and elevation 
 
 function [range,azimuth,elevation] = Elevation_function(sat_position, GMST,geodetic_lat, longitude, height)
 
