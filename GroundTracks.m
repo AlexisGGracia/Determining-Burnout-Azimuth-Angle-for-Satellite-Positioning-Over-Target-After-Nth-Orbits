@@ -1,4 +1,4 @@
-
+%Given a timespan, satellite positioning, GMST, Earth's rotation rate, and Earths oblaqueness constant, it computes the latitude and longitude which can be plotted as scattered points to generate the groundtracks on the map 
 function [sat_lat,sat_long] = GroundTracks( t,sat_pos,GMST,w, f)
     %compute the greenwich sidereal time
     
