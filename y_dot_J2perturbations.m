@@ -1,4 +1,5 @@
-
+%Function uses two-body dynamics including J2 pertubations output dy which contains the six constants such as velocity(1:3) and acceleration(4:6)
+% y is a vector that contains the three components in the XYZ of position(1:3) and velocity(4:6)
 function dy = y_dot_J2perturbations(t, y,mu)
     %defining constants
     format longG
