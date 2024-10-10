@@ -34,57 +34,33 @@ This section provides a detailed explanation of the logic and steps involved in 
 
      
          
-2. ** sdgsdf **
+2. ** Using Katherine Johnson and Skopinski NASA technical notes, determine the burnout azimuth of the spacecraft**
+3. ** Determine the orbital elements of the satellite at burnout to achieve the goal of passing over a desire position after a precise number of revolutions
+4. ** Propagates the orbit based on two-body with with J2 perturbations included
+5. ** Determine the accuracy of the solution by:
+      (a) ** Generating grountracks for the satellite that includes coastlines and desire location on the map
+      (b) ** Plotting the satellite elevation RELATIVE to the desire location over the time-period where it should pass overhead
+
+### Important Notes
+
+- **J2 Perturbations**: In this project, J2 perturbations (due to Earth's oblateness) are only considered during the **first iteration** of the burnout azimuth calculation.
+                        This is because the primary goal of this calculation is to determine the **initial azimuth angle at burnout** required to position the spacecraft
+                        over a target location immediately after burnout.
+                        
+  
+- **First Iteration**: During the first iteration, J2 perturbations are included to refine the orbital parameters (such as inclination and node) at the moment of burnout.
+                       These perturbations slightly affect the spacecraft’s trajectory and need to be accounted for to ensure accurate initial positioning.
+
+- **Subsequent Iterations**: For later iterations, J2 perturbations are **ignored**. This simplification is made because the subsequent calculations focus primarily on
+                             placing the satellite in the desired position **immediately after burnout**. The long-term effects of J2 on the orbit (such as orbital precession)
+                             are considered minimal for this immediate mission goal.
+
+- **Why This Approach?**: The neglect of J2 in later iterations is a practical choice, as the impact of J2 on short-term positioning is minimal compared to the complexity
+                          it would add to the calculations. For long-term mission planning, J2 and other perturbations should be modeled, but for the purposes of this burnout
+                          azimuth determination, they do not significantly affect the accuracy of the placement.
 
 
-   
 
-3. **Extract the information required such as degrees, minutes, seconds, distance, and directions from the `.txt` file.**
-
-4. **Include an if statement that checks if there is any missing information in case the code failed to extract all the required information.**
-    - In this section, it checks for the length of degrees, minutes, seconds, distance, and directions.
-    - If the code successfully extracts all the information, it continues. Otherwise, it prompts a warning sign with hints to help debug the location of the problem.
-
-5. **Convert the given coordinates and distances such as "North 26°25'30" East - 15.6 ft" to Cartesian XY points.**
-    - To do so, we need to find the bearing angles to convert from polar coordinates to XY points.
-    
-    **Steps to convert from DMS to XY points:**
-    ```python
-    # Find the decimal degree
-    decimal_degree = degrees + (minutes / 60) + (seconds / 3600)
-    
-    # Convert decimal degree to bearing angle:
-    if directions are NE:
-        bearing_angle = decimal_degrees
-    if directions are SE:
-        bearing_angle = 180 - decimal_degrees
-    if directions are SW:
-        bearing_angle = 180 + decimal_degrees
-    if directions are NW:
-        bearing_angle = 360 - decimal_degrees
-    ```
-
-6. **Convert from polar coordinates to XY points:**
-
-    **Steps:**
-    ```python
-    angle = 90 - bearing_angle
-    X = distance * cos(angle)
-    Y = distance * sin(angle)
-    ```
-
-7. **Pass the XY points to the `arcpy.da.InsertCursor` function to plot the XY points as polygons.**
-
-    **Steps:**
-    - Define a database.
-    - Define a feature class (Example: `TraversedLines`).
-    - Define a spatial reference (2278 corresponds to South Texas Central and should be changed based on the desired geographic location).
-    - Define a polygon using the points (make sure the first and last points are the same to close the polygon).
-    - Use `arcpy.da.InsertCursor` to access the traverse tool and insert the XY points for each row.
-
-### Important Notes:
-- Your starting point and your last point generated should be the same to close the polygon.
-- Additionally, when computing your XY points, you need to use the previous point as your new starting point for the next XY points. Otherwise, your shape will be inaccurate.
 
   
 ## Requirements 
