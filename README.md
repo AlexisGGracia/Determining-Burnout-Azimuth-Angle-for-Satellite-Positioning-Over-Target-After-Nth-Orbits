@@ -38,7 +38,7 @@ This section provides a detailed explanation of the logic and steps involved in 
 
 3. **Determine the orbital elements of the satellite at burnout** to achieve the goal of passing over a desired position after a precise number of revolutions.
 
-4. **Propagate the orbit based on two-body dynamics**, including J2 perturbations.
+4. **Propagate the orbit using ODE45 based on two-body dynamics**, including J2 perturbations.
 
 5. **Determine the accuracy of the solution by:**
    - (a) **Generating groundtracks for the satellite**, including coastlines and the desired location on the map.
@@ -98,12 +98,6 @@ In this section, I have included the groundtracks and an elevation plot relative
 
 ![Austin_Texas_ELEVATION](https://github.com/user-attachments/assets/dbe41be2-75e8-48ee-8ffe-a421fe4186d0)
 
-## Project Usage
-
-This project is used by the following company:
-
-- **Office of the County Engineer**
-    - GIS Team
 
 ## Contributor
 
