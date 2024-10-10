@@ -93,7 +93,7 @@ In this section, I have included the groundtracks and an elevation plot relative
     
 ## Elevation vs Time plot: 
 
-_ **Elevation Plot**: The elevation plot versus time plot helps track how the altitude of a spacecraft changes over time, providing valuable insight into its orbital path and visibility from a ground station or observation point. 
+- **Elevation Plot**: The elevation plot versus time plot helps track how the altitude of a spacecraft changes over time, providing valuable insight into its orbital path and visibility from a ground station or observation point. 
    - Since the final destination is Austin, Texas (right above the ground station) it shows that the final elevation is 90 degrees
 
 ![Austin_Texas_ELEVATION](https://github.com/user-attachments/assets/dbe41be2-75e8-48ee-8ffe-a421fe4186d0)
