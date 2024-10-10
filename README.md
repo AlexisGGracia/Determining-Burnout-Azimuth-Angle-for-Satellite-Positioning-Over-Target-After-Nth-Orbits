@@ -10,25 +10,28 @@ Who is it for? This project was developed at The University of Texas at Austin a
 
 This section provides a detailed explanation of the logic and steps involved in the code.
 
-1. **Defines parameters such as semi-major axis, eccentricity,  Greenwich Sidereal Meridian Time (GMST) at burnout ETC, latitude/longitude at burnout , latitude/longitude at desire location, constants etc**
-     - Orbital elements such as semi-major axis, eccentricity are determined based on mission constraints such as altitude of orbiting spacecraft and desire orbit type
-     -  Parameters defined are as follow:
-       ```MATLAB
-          %defining parameters
-          format longG
-          a = 6500;                       %semi-major axis (km)
-          e = 0.001;                      %Orbit's eccentricity
-          theta1 = 20*pi/180;             %initial true anomally at burnout
-          GSMT = 0;                       %Greenwich Siderial meridian time at burnout
-          mu_earth = 398600.4415;         %Gravitational parameter of earth (km^3/s^2)
-          R_earth = 6378.1363;            %Radius of earth (km)
-          J2 = 0.0010826267;              %J2 perturbations due to earths's oblaqueness
-          w_earth = 2*pi / 86164 ;        %Earth's rotation rate
-          n = 10;
-          iterations = 4;
-          i = 1;                         %counting variable
-          f = 3.353*10^-3;               %Earth's Oblaqueness Constant
-          height = 0;
+1. **Defines parameters such as semi-major axis, eccentricity, Greenwich Sidereal Meridian Time (GMST) at burnout, etc.**
+
+   - Orbital elements such as semi-major axis, eccentricity are determined based on mission constraints such as altitude of orbiting spacecraft and desired orbit type.
+   - Parameters defined are as follows:
+
+   ```MATLAB
+   % Defining parameters
+   format longG
+   a = 6500;                       % Semi-major axis (km)
+   e = 0.001;                      % Orbit's eccentricity
+   theta1 = 20*pi/180;             % Initial true anomaly at burnout
+   GSMT = 0;                       % Greenwich Sidereal Meridian time at burnout
+   mu_earth = 398600.4415;         % Gravitational parameter of Earth (km^3/s^2)
+   R_earth = 6378.1363;            % Radius of Earth (km)
+   J2 = 0.0010826267;              % J2 perturbations due to Earth's obliqueness
+   w_earth = 2*pi / 86164;         % Earth's rotation rate
+   n = 10;
+   iterations = 4;
+   i = 1;                          % Counting variable
+   f = 3.353*10^-3;               % Earth's obliqueness constant
+   height = 0;
+
      
          
 2. ** sdgsdf **
