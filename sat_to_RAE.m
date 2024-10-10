@@ -1,6 +1,4 @@
-
-
-
+% Given the Satellites position, GMST, latitude, longitude, and height, it computes the range, azimuth and elevation 
 
 function [range, azimuth_deg, elevation_deg] = sat_to_RAE(sat_position, GMST_rad, geodetic_lat_rad, longitude_rad, height_km)
 
