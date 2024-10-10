@@ -1,4 +1,4 @@
-
+% Function converts Orbital Elements (OE) to Position and Velocity (PV)
 function motion = CartesianCoordinateConversion (a, e, theta, i, w, omega, mu)
     format longG
         E = 0.00000000001;      %some very small number for comparasion purpose
