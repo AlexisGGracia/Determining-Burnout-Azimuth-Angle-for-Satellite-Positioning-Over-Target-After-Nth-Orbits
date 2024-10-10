@@ -34,12 +34,16 @@ This section provides a detailed explanation of the logic and steps involved in 
 
      
          
-2. ** Using Katherine Johnson and Skopinski NASA technical notes, determine the burnout azimuth of the spacecraft**
-3. ** Determine the orbital elements of the satellite at burnout to achieve the goal of passing over a desire position after a precise number of revolutions
-4. ** Propagates the orbit based on two-body with with J2 perturbations included
-5. ** Determine the accuracy of the solution by:
-      (a) ** Generating grountracks for the satellite that includes coastlines and desire location on the map
-      (b) ** Plotting the satellite elevation RELATIVE to the desire location over the time-period where it should pass overhead
+2. **Using Katherine Johnson and Skopinski NASA technical notes, determine the burnout azimuth of the spacecraft.**
+
+3. **Determine the orbital elements of the satellite at burnout** to achieve the goal of passing over a desired position after a precise number of revolutions.
+
+4. **Propagate the orbit based on two-body dynamics**, including J2 perturbations.
+
+5. **Determine the accuracy of the solution by:**
+   - (a) **Generating groundtracks for the satellite**, including coastlines and the desired location on the map.
+   - (b) **Plotting the satellite elevation relative to the desired location** over the time period when it should pass overhead.
+
 
 ### Important Notes
 
