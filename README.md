@@ -100,12 +100,6 @@ In this section, I have included the groundtracks and an elevation plot relative
 
 ## Citations
 
-. H. Skopinski and K. G. Johnson, “Determination of Azimuth Angle at Burnout for Placing a
-Satellite Over a Selected Earth Position”, NASA Tech Note D-233, September, 1960.
-https://ntrs.nasa.gov/citations/19980227091
-
-## Citations
-
 H. Skopinski and K. G. Johnson, *"Determination of Azimuth Angle at Burnout for Placing a Satellite Over a Selected Earth Position"*, NASA Tech Note D-233, September 1960. [NASA Technical Report](https://ntrs.nasa.gov/citations/19980227091)
 
 
