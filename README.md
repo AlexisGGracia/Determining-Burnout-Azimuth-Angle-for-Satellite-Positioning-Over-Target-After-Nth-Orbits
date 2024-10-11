@@ -34,11 +34,11 @@ This section provides a detailed explanation of the logic and steps involved in 
 
      
          
-2. **Using Katherine Johnson and Skopinski NASA technical notes, determine the burnout azimuth of the spacecraft.**
+2. **Using Katherine Johnson and Skopinski NASA technical notes, determine the burnout azimuth of the spacecraft using your preferred iterative method.**
 
-3. **Determine the orbital elements of the satellite at burnout** to achieve the goal of passing over a desired position after a precise number of revolutions.
+3. **Determine the orbital elements of the satellite at burnout** to achieve the goal of passing over a desired position after a precise number of revolutions.**
 
-4. **Propagate the orbit using ODE45 based on two-body dynamics**, including J2 perturbations.
+4. **Propagate the orbit using ODE45 based on two-body dynamics, including J2 perturbations.**
 
 5. **Determine the accuracy of the solution by:**
    - (a) **Generating groundtracks for the satellite**, including coastlines and the desired location on the map.
@@ -75,10 +75,11 @@ To run this project, you will need the following software and tools:
 - **MATLAB Toolboxes**: The following toolboxes are recommended for running the simulations:
   - Aerospace Toolbox
   - Mapping Toolbox
-  - MATLAB functions which are included as separate files under this project 
+  - MATLAB functions which are included as separate files under this project
 
 ### Additional Information:
 The project uses MATLAB's built-in functions and toolboxes to perform orbital simulations, including two-body propagation, J2 perturbations, and groundtrack generation.
+If you cannot acess the aerospace and mapping toolbox for free, I have included the workspace to upload a 2D map to plot groundtracks. You just need to download it into your workspace
 
 You can install necessary MATLAB packages directly through the MATLAB interface.
 
