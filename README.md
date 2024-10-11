@@ -2,7 +2,7 @@
 
 # Introduction
 
-This project utilizes Ms. Katherine Johnson's NASA technical notes to determine the burnout azimuth angle required for a spacecraft to position itself over a desired location on Earth after a specific number of orbital periods accounting for J2 pertubations. The simulation was implemented in MATLAB and is designed for satellite mission planning. It calculates the orbital elements necessary to position the spacecraft for applications such as reconnaissance, Earth observation, or reentry positioning.
+This project utilizes Ms. Katherine Johnson's NASA technical notes from 1960 to determine the burnout azimuth angle required for a spacecraft to position itself over a desired location on Earth after a specific number of orbital periods accounting for J2 pertubations. The simulation was implemented in MATLAB and is designed for satellite mission planning. It calculates the orbital elements necessary to position the spacecraft for applications such as reconnaissance, Earth observation, or reentry positioning.
 
 Who is it for? This project was developed at The University of Texas at Austin as part of my Final Project for my Spacecraft Dynamics course taken during Fall 2023
 
