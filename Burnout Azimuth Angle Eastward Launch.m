@@ -1,4 +1,6 @@
 %% Determine (i) the burnout azimuth of the spacecraft for the Technical Case East Launch
+%Starting Location: Kennedy's Space Station in cape canaveral
+%Final Destination: coastline of california (Prep for re-entry)
 
 
 
