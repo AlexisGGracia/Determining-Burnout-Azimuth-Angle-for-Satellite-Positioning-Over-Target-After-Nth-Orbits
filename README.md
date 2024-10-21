@@ -85,19 +85,25 @@ You can install necessary MATLAB packages directly through the MATLAB interface.
 
 
 # Visual Results
-In this section, I have included the groundtracks and an elevation plot relative to my desire location that demonstrates the accuracy of this model.
+In this section, I have included the groundtracks and an elevation plot relative to my desire location that demonstrates the accuracy of this model. Additionally, I have included the groundtracks and elevation plot replicating the results from the technical case presented by Ms. Katherine Johnson
 
-## Groundtracks: 
+## Groundtracks (Austin, Texas Case): 
 
 - **Groundtracks**: Starting location is along the coast of california and final destination is Austin, Texas. My mission was designed such that it completes this after 10th orbital periods.
 ![Austin_Grountrack_Pic](https://github.com/user-attachments/assets/95396d28-e579-4f98-964d-ea55ac6b8ee7)
     
-## Elevation vs Time plot: 
+## Elevation vs Time plot (Austin, Texas case): 
 
 - **Elevation Plot**: The elevation plot versus time plot helps track how the altitude of a spacecraft changes over time, providing valuable insight into its orbital path and visibility from a ground station or observation point. 
    - Since the final destination is Austin, Texas (right above the ground station) it shows that the final elevation is 90 degrees
 
 ![Austin_Texas_ELEVATION](https://github.com/user-attachments/assets/dbe41be2-75e8-48ee-8ffe-a421fe4186d0)
+
+## Groundtracks (Technical Case): 
+![Technical_Case_Groundtrack](https://github.com/user-attachments/assets/7b3b37a2-e049-4298-bf66-f68f1830c0ad)
+
+## Elevation vs Time plot (Techncial Case): 
+![TechnicalCase_elevation](https://github.com/user-attachments/assets/b12f5b10-09d6-4d5a-a502-db3e17b99f3c)
 
 ## Citations
 
